@@ -1,4 +1,4 @@
-
+<!--
 <html>
   <head>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
@@ -78,27 +78,36 @@ $(player).find('#secondarysrc').attr('src', link.attr('data-altsrc'));
   Votre navigateur n'est pas compatible
 </audio>-->
 
- <!--<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <title>Audio playbackRate Example</title>  
 </head>
 <body>
 <div>
-  <audio id="audio1" style="width:25%" controls>Canvas not supported</audio>
+<button onclick="setCurTime()" type="button">Set time position to 20 seconds before</button><br> 
+  <audio id="audio" style="width:25%" controls>Canvas not supported</audio>
 </div>
 <div>
 <input type="text" id="audioFile" value="audio/donjon-de-naheulbeuk01.mp3" size="60" />
+
 
 </div>
   <button id="playbutton" onclick="togglePlay();">Play</button>  
   <button onclick="increaseSpeed();">Increase speed</button>
   <button onclick="decreaseSpeed();">Decrease speed</button><br />
   <div id="rate"></div>
+  <script>
+var audio = document.getElementById("audio");
+
+function setCurTime() { 
+    audio.currentTime=audio.currentTime -20;
+} 
+</script> 
 
      <script type="text/javascript">
        // Create a couple of global variables to use. 
-       var audioElm = document.getElementById("audio1"); // Audio element
+       var audioElm = document.getElementById("audio"); // Audio element
        var ratedisplay = document.getElementById("rate"); // Rate display area
 
        // Hook the ratechange event and display the current playbackRate after each change
@@ -108,7 +117,7 @@ $(player).find('#secondarysrc').attr('src', link.attr('data-altsrc'));
 
        //  Alternates between play and pause based on the value of the paused property
        function togglePlay() {
-         if (document.getElementById("audio1")) {
+         if (document.getElementById("audio")) {
 
            if (audioElm.paused == true) {
              playAudio(audioElm);    //  if player is paused, then play the file
@@ -149,4 +158,4 @@ $(player).find('#secondarysrc').attr('src', link.attr('data-altsrc'));
 
 
 </body>
-</html>-->
+</html>
