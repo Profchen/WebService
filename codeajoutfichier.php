@@ -3,8 +3,6 @@
 <head>
 	<meta charset="UTF-8">
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-    <script src="bootstrap/js/jquery.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 	<body>
