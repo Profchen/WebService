@@ -93,7 +93,6 @@ $(player).find('#secondarysrc').attr('src', link.attr('data-altsrc'));
 
 
 </div>
-  <button id="playbutton" onclick="togglePlay();">Play</button>  
   <button onclick="increaseSpeed();">Increase speed</button>
   <button onclick="decreaseSpeed();">Decrease speed</button><br />
   <div id="rate"></div>
