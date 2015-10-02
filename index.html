@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<link href="bootstrap/bootstrap/css/style.css" rel="stylesheet">
+    <link href="bootstrap/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/bootstrap/js/jquery.js"></script>
+	<script src="bootstrap/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+	<body id="index">
+
+		<h1 class="col-lg-12" style="text-align:center; margin-bottom:30px">ProjectAudio</h1>
+		
+		<div class="row">
+			<div class="col-md-4" style="padding-left:33%">
+				<a href="playlist.html"><p type="button">Playlist</p></a>
+			</div>
+			<div class="col-md-4" style="padding-left:20%">
+				<a href="codeajoutfichier.html"><p type="button">Ajout de fichier</p></a>
+			</div>
+		</div>
+		
+		<form action="test.php" method="post">
+			<label>Le donjon de Naheulbeuk - Episode 1</label></br>
+			<audio id="audio" controls="controls" buffered preload="none">
+			  <source src="../WebService/Audio/donjon-de-naheulbeuk01.mp3" type="audio/mp3" />
+			  Votre navigateur n'est pas compatible
+			</audio>
+		</form>
+		
+		<form action="test.php" method="post">
+			<label>Le donjon de Naheulbeuk - Episode 2</label></br>
+			<audio id="audio" controls="controls" buffered preload="none">
+			  <source src="../WebService/Audio/donjon-de-naheulbeuk02.mp3" type="audio/mp3" />
+			  Votre navigateur n'est pas compatible
+			</audio>
+		</form>
+		
+		<form action="test.php" method="post">
+			<label>Le donjon de Naheulbeuk - Episode 3</label></br>
+			<audio id="audio" controls="controls" buffered preload="none">
+			  <source src="../WebService/Audio/donjon-de-naheulbeuk03.mp3" type="audio/mp3" />
+			  Votre navigateur n'est pas compatible
+			</audio>
+		</form>
+	</body>
+	
+</html>
