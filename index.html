@@ -26,7 +26,15 @@
 			<audio id="audio" controls="controls" buffered preload="none">
 			  <source src="../WebService/Audio/donjon-de-naheulbeuk01.mp3" type="audio/mp3" />
 			  Votre navigateur n'est pas compatible
-			</audio>
+			</audio></br>
+			<button id="retourarriere" onclick="setCurTime()" type="button">Revenir 10 secondes en arrière</button>
+				<script>
+					var audio = document.getElementById("audio");
+
+					window.setCurTime = function () { 
+						audio.currentTime=audio.currentTime -10;
+					} 
+				</script>
 		</form>
 		
 		<form action="test.php" method="post">
@@ -34,7 +42,15 @@
 			<audio id="audio" controls="controls" buffered preload="none">
 			  <source src="../WebService/Audio/donjon-de-naheulbeuk02.mp3" type="audio/mp3" />
 			  Votre navigateur n'est pas compatible
-			</audio>
+			</audio></br>
+			<button id="retourarriere" onclick="setCurTime()" type="button">Revenir 10 secondes en arrière</button>
+				<script>
+					var audio = document.getElementById("audio");
+
+					window.setCurTime = function () { 
+						audio.currentTime=audio.currentTime -10;
+					} 
+				</script>
 		</form>
 		
 		<form action="test.php" method="post">
@@ -42,7 +58,15 @@
 			<audio id="audio" controls="controls" buffered preload="none">
 			  <source src="../WebService/Audio/donjon-de-naheulbeuk03.mp3" type="audio/mp3" />
 			  Votre navigateur n'est pas compatible
-			</audio>
+			</audio></br>
+			<button id="retourarriere" onclick="setCurTime()" type="button">Revenir 10 secondes en arrière</button>
+				<script>
+					var audio = document.getElementById("audio");
+
+					window.setCurTime = function () { 
+						audio.currentTime=audio.currentTime -10;
+					} 
+				</script>
 		</form>
 	</body>
 	

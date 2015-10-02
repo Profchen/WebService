@@ -1,0 +1,8 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+
+RewriteRule ^ws/([a-zA-Z0-9_-]+)/([0-9]+)$ controller.php?act=$1&id=$2 [L]
+RewriteRule ^ws/([a-zA-Z0-9_-]+)/([0-9]+)/$ controller.php?act=$1&id=$2 [L]
+RewriteRule ^ws/([a-zA-Z0-9_-]+)$ controller.php?act=$1
+RewriteRule ^ws/([a-zA-Z0-9_-]+)/$ controller.php?act=$1
