@@ -27,12 +27,12 @@ while ($donnees = $reponse->fetch())
   Votre navigateur n'est pas compatible
 </audio>
 <br/>
-<button onclick="setCurTime()" type="button">Set time position to 20 seconds before</button>
+<button onclick="setCurTime()" type="button">Set time position to 10 seconds before</button>
   <script>
 var audio = document.getElementById("audio");
 
 function setCurTime() { 
-    audio.currentTime=audio.currentTime -20;
+    audio.currentTime=audio.currentTime -10;
 } 
 </script> 
 <?php
