@@ -8,8 +8,8 @@
 	const REGISTER_ADMIN = 'register';
 	const LOGOUT_USER = 'logout';
 	const GET_VERIF_USER = 'login';
-	const REMOVE_USER = 'remove';
-	const MODIFY_USER = 'modify';
+	// const REMOVE_USER = 'remove';
+	// const MODIFY_USER = 'modify';
 	// const SQL_GET_ALL_USER = "SELECT idAdmin, login, password FROM admin";
 	// const SQL_GET_VERIF_USER = "SELECT password FROM admin WHERE login=".$login." AND password=".$password"";
 	
@@ -25,10 +25,7 @@
 			{
 				case GET_VERIF_USER:
 					return $this->getVerifUser();
-				
-				case GET_USERS:
-					return $this->getAllUser();
-					
+
 				case LOGOUT_USER:
 					return $this->logout();
 					
@@ -37,9 +34,6 @@
 					
 				case REMOVE_USER:
 					return $this->remove();
-				
-				case MODIFY_USER:
-					return $this->modify();
 
 				default:
 					Access::ThrowAccessDenied();
@@ -86,39 +80,31 @@
 		private function register(){
 			
 			if (!isset($_GET['login']) || !isset($_GET['password']))
-				Helper::ThrowAccessDenied();
+				Access::ThrowAccessDenied();
 			
 			MySQL::Execute("INSERT INTO admin(login, password) VALUES ('".$_GET['login']."','".$_GET['password']."')");
 		}
 		
 		private function remove(){
 			if (!isset($_GET['idAdmin']))
-				Helper::ThrowAccessDenied();
+				Access::ThrowAccessDenied();
 			MySQL::Execute('DELETE FROM admin WHERE idAdmin='.$_GET['idAdmin']);
-			
-		}
-		
-		private function modify(){
-			if (!isset($_GET['idAdmin']) || !isset($_GET['login']) || !isset($_GET['password']))
-				Helper::ThrowAccessDenied();
-			
-			MySQL::Execute("UPDATE admin SET login='".$_GET['login']."', password='".$_GET['password']."' WHERE idAdmin=".$_GET['idAdmin']);
 			
 		}
 		
 		public function DoPost()
 		{
-			Helper::ThrowAccessDenied();
+			Access::ThrowAccessDenied();
 		}
 		
 		public function DoPut()
 		{
-			Helper::ThrowAccessDenied();
+			Access::ThrowAccessDenied();
 		}
 
 		public function DoDelete()
 		{
-			Helper::ThrowAccessDenied(); 
+			Access::ThrowAccessDenied(); 
 		}
 	}
 

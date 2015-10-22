@@ -89,6 +89,28 @@
 			</fieldset>
 		</form>
 
+		<script type="text/javascript">
+			$('#title').html('Ajouter');
+			$('#button').val("Valider")
+			$('#button').html(' <input type="submit" value="Valider" class="btn btn-primary">')
+			$('#button').click(function(){
+				if($('#login').val() === '' || $('#password').val() === '' || $('#password2').val() === ''){
+					alert('Vous devez entrer tous les champs');
+				}else{
+					if($('#password').val() === $('#password2').val()){
+						$.ajax({
+							url: "http://" + IP_ADDRESS + "/WebService/ws/ControllerWS.php?ws=User&action=register",
+							type:'POST',
+							async: false,
+							data : { 'login' : $('#login').val(), 'password' : $('#password').val() }
+						});
+					}else{
+						alert('Les deux mots de passe ne sont pas similaires');
+					}
+				};
+			});
+
+		</script>
 
 	</body>
 
