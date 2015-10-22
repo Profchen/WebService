@@ -2,6 +2,8 @@
 
 require_once '/IWebServiciable.php';
 
+const 
+
 class WS_File implements IWebServiciable {
     
     public $requestParams;

@@ -70,6 +70,10 @@
 			self::$connection = new PDO(sprintf(self::DB_DATASOURCE_STRING, $DB_Host, $DB_Port, $DB_Name),
 						  		        $DB_User, $DB_Password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 		}
+<<<<<<< HEAD
 	}
 	
 ?>
+=======
+	}
+>>>>>>> origin/master
