@@ -47,7 +47,7 @@ INSERT INTO `episodes` (`Id`, `Name`, `Url`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `playlist` (
-  `Id` int(11) NOT NULL,
+  `Id` int(11) NOT NULL, AUTO_INCREMENT
   `Name` varchar(30) NOT NULL,
   `Lenght` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
