@@ -13,7 +13,7 @@
 	// const SQL_GET_ALL_USER = "SELECT idAdmin, login, password FROM admin";
 	// const SQL_GET_VERIF_USER = "SELECT password FROM admin WHERE login=".$login." AND password=".$password"";
 	
-	class WS_USER implements IWebServiciable
+	class UserWS implements IWebServiciable
 	{
 		
 		public function DoGet()
