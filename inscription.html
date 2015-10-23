@@ -19,7 +19,7 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="pseudo">Pseudo</label>  
 			  <div class="col-md-5">
-			  <input id="pseudo" name="pseudo" type="text" placeholder="ex : Jacquie" class="form-control input-md">
+			  <input id="login" name="login" type="text" placeholder="ex : Jacquie" class="form-control input-md">
 			  <span class="help-block">Entrez un pseudonyme</span>  
 			  </div>
 			</div>
@@ -46,7 +46,7 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="mdp">Mot de passe</label>
 			  <div class="col-md-5">
-				<input id="mdp" name="mdp" type="password" placeholder="" class="form-control input-md">
+				<input id="password" name="password" type="password" placeholder="" class="form-control input-md">
 				<span class="help-block">Entrez votre mot de passe</span>
 			  </div>
 			</div>
@@ -55,7 +55,7 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="mdpverif">Répétez le mot de passe</label>
 			  <div class="col-md-5">
-				<input id="mdpverif" name="mdpverif" type="password" placeholder="" class="form-control input-md">
+				<input id="password2" name="password2" type="password" placeholder="" class="form-control input-md">
 				<span class="help-block">répétez le mot de passe</span>
 			  </div>
 			</div>
@@ -82,7 +82,7 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="validbutton"></label>
 			  <div class="col-md-4">
-				<a id="validbutton" href="connection.html" name="validbutton" class="btn btn-primary">Valider</a>
+				<a id="validbutton" value="Valider" class="btn btn-primary">Valider</a>
 			  </div>
 			</div>
 
@@ -90,11 +90,9 @@
 		</form>
 
 		<script type="text/javascript">
-			$('#title').html('Ajouter');
-			$('#button').val("Valider")
-			$('#button').html(' <input type="submit" value="Valider" class="btn btn-primary">')
-			$('#button').click(function(){
-				if($('#login').val() === '' || $('#password').val() === '' || $('#password2').val() === ''){
+			$('#validbutton').val("Valider");
+			$('#validbutton').click(function(){
+				if($('#name').val() === '' || $('#password').val() === '' || $('#password2').val() === ''){
 					alert('Vous devez entrer tous les champs');
 				}else{
 					if($('#password').val() === $('#password2').val()){
@@ -102,12 +100,12 @@
 							url: "http://" + IP_ADDRESS + "/WebService/ws/ControllerWS.php?ws=User&action=register",
 							type:'POST',
 							async: false,
-							data : { 'login' : $('#login').val(), 'password' : $('#password').val() }
+							data : { 'name' : $('#name').val(), 'password' : $('#password').val() }
 						});
 					}else{
 						alert('Les deux mots de passe ne sont pas similaires');
 					}
-				};
+				}
 			});
 
 		</script>

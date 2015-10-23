@@ -13,7 +13,7 @@
 	// const SQL_GET_ALL_USER = "SELECT idAdmin, login, password FROM admin";
 	// const SQL_GET_VERIF_USER = "SELECT password FROM admin WHERE login=".$login." AND password=".$password"";
 	
-	class WS_USER implements IWebServiciable
+	class UserWS implements IWebServiciable
 	{
 		
 		public function DoGet()
@@ -78,11 +78,14 @@
 		}
 		
 		private function register(){
-			
-			if (!isset($_GET['login']) || !isset($_GET['password']))
+			if (!isset($_REQUEST['name']) || !isset($_REQUEST['password']))
 				Access::ThrowAccessDenied();
 			
-			MySQL::Execute("INSERT INTO admin(login, password) VALUES ('".$_GET['login']."','".$_GET['password']."')");
+			return MySQL::Execute(
+				"INSERT INTO user(name, password, firstname, mail, telephone) VALUES ('".$_REQUEST['name'].
+				"','".$_REQUEST['password']."','".$_REQUEST['firstname']."','".$_REQUEST['mail']."','"
+				.$_REQUEST['telephone']."')");
+
 		}
 		
 		private function remove(){

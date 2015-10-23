@@ -3,7 +3,6 @@
 	include_once('Access.php');
 
 	const PARAM_WS = 'ws';
-	const PATH_WEBSERVICES = 'webservices';
 
 	// We verify all needed parameters.
 	if(!isset($_GET[PARAM_WS]))
@@ -11,7 +10,7 @@
 
 	// We gets the informations of the desired service.
 	$serviceName = ucfirst(strtolower($_GET['ws']).'WS');
-	$servicePath = PATH_WEBSERVICES.'\\'.$serviceName.'.php';
+	$servicePath = $serviceName.'.php';
 
 	// If the service doesn't exist, we stop the request.
 	if (!file_exists($servicePath))
