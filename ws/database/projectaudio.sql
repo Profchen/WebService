@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 -- Structure de la table `episodes`
 --
 
+CREATE DATABASE IF NOT EXISTS 'projectaudio'
+
 CREATE TABLE IF NOT EXISTS `episodes` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(30) NOT NULL,

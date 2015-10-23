@@ -1,6 +1,6 @@
 <?php
 
-class WS_Securities {
+class SecuritiesWS {
     
     public function doBasicSecurities() {
         
